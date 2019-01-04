@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block css %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='styleCreate.css') }}">
+{% endblock %}
+
+{% block header %}
+  <h1 id="createHeader">
+    Add an asset
+  </h1>
+{% endblock %}
+
+{% block content %}
+
+  <form method="post">
+    <div id="assetBoxes">
+        <label id="nameLabel" for="asset_name">Asset Name</label>
+        <input name="asset_name" id="asset_name" required>
+        <label id="typeLabel" for="asset_type">Asset Type</label>
+        <select name="asset_type" required>
+            <option disabled selected value> -- Select a type -- </option>
+            <option value="Donation">Donation</option>
+            <option value="Repair">Repair</option>
+            <option value="Reduced Packaging">Reduced Packaging</option>
+            <option value="Second Hand">Second-Hand</option>
+            <option value="Share">Share</option>
+        </select>
+        <label id="addressLabel" for="asset_address">Address</label>
+        <textarea name="asset_address" id="asset_address"> </textarea>
+        <input type="hidden" name="latitude" id="latitude">
+        <input type="hidden" name="longitude" id="longitude">
+        <input id="submitButton" type="submit" value="Submit">
+        <button type="button" id="dropPin"> Drop pin </button>
+    </div>
+
+
+  </form>
+{% endblock %}

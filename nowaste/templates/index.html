@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block header %} 
+<h1 id="assets">Assets</h1>
+<form id="searchForm" action="#" method="post" onsubmit="return false">
+    <input id="searchInput" type="text" placeholder="Search...">
+</form>
+{% endblock %}
+
+{% block content %}
+    <div id="assetList">
+            {% for asset in assets %}
+                <div class="assets">
+                  <a id= "{{ loop.index0 }}" class="{{asset['id']}}" href="#"> {{ asset['asset_name'] }} </a>
+                </div>
+          {% endfor %} 
+    </div>
+
+{% endblock %}
+
+
+{% block js %}
+<script src="{{ url_for('static', filename='index.js') }}"></script>
+{% endblock %}
