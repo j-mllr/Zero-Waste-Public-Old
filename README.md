@@ -1,4 +1,4 @@
-# Zero-Waste-Public
+# Zero-Waste-Public // http://no-waste.herokuapp.com/
 
 Welcome to my zero waste web application written using Flask and Python. The database used is MySQL and the search function is implemented via Elasticsearch.
 
